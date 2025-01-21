@@ -109,6 +109,17 @@
 
       document.body.appendChild(script);
 
+      // Function to get Telegram User ID
+      function GetTelegramUserId() {
+        if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe) {
+          const userId = window.Telegram.WebApp.initDataUnsafe.user.id;
+          // Send the user ID to Unity
+          SendMessage('GameManager', 'ReceiveTelegramUserId', userId);
+        } else {
+          console.error("Telegram WebApp object is not available.");
+        }
+      }
+
     </script>
   </body>
 </html>
