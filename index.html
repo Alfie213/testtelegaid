@@ -144,7 +144,7 @@
                 }
 
                 console.log("User ID:", userId);
-                unityInstance.SendMessage('TelegramIntegration', 'Success', userId);
+                myGameInstance.SendMessage('TelegramIntegration', 'Success', userId);
                 return userId;
             } catch (error) {
                 console.error("Error while fetching Telegram user ID:", error);
